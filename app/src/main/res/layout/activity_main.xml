@@ -19,7 +19,6 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:textColor="@color/white"
-            android:text="Calculator working"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:layout_gravity="end"
@@ -29,9 +28,9 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:textColor="@color/white"
-            android:text="Calculator result"
             android:gravity="center_vertical"
-            android:layout_gravity="end"            android:layout_weight="1"
+            android:layout_gravity="end"
+            android:layout_weight="1"
             android:textSize="45sp"/>
 
     </LinearLayout>
@@ -249,7 +248,17 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="1"
+                android:background="@null"
+                android:textColor="@color/red"
+                android:textSize="@dimen/calcButtonTextSize"
+                android:onClick="deleteOnClick"
+                android:text="del"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:textColor="@color/orange"
                 android:textSize="@dimen/calcButtonTextSize"

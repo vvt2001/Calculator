@@ -12,7 +12,6 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
-
 public class MainActivity extends AppCompatActivity {
 
     TextView workingTV;
@@ -103,12 +102,28 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    boolean leftBracket = true;
+
     public void clearOnClick(View view) {
         workingTV.setText("");
         workingString = "";
         resultTV.setText("");
+        leftBracket = true;
     }
-    public void bracketsOnClick(View view) {}
+    public void bracketsOnClick(View view)
+    {
+        if(leftBracket)
+        {
+            setWorkingString("(");
+            leftBracket = false;
+        }
+        else
+        {
+            setWorkingString(")");
+            leftBracket = true;
+        }
+    }
+
     public void powerOnClick(View view) {
         setWorkingString("^");
     }
@@ -125,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         setWorkingString("9");
     }
     public void multiplyOnClick(View view) {
-        setWorkingString("X");
+        setWorkingString("*");
     }
     public void sixOnClick(View view) {
         setWorkingString("6");
@@ -159,4 +174,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void deleteOnClick(View view) {
+        if (workingString.length() == 1){
+            workingString = "";
+        }
+        if (workingString.length() > 1) {
+            workingString = workingString.substring(0, workingString.length() - 1);
+        }
+        workingTV.setText(workingString);
+    }
 }
